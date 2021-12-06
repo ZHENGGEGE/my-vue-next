@@ -16,17 +16,17 @@ describe("effect", () => {
     expect(nextAge).toBe(12);
   });
 
-  it('runner', () => {
+  it("runner", () => {
     // 1.effect(fn) -> function(runner) -> fn -> return
     let foo = 10;
     const runner = effect(() => {
       foo++;
-      return "foo"
-    })
+      return "foo";
+    });
     expect(foo).toBe(11);
     const r = runner();
-    expect(r).toBe("foo")
-  })
+    expect(r).toBe("foo");
+  });
 
   it("scheduler", () => {
     // 1.通过effect的第二个参数给定的一个scheduler的fn
