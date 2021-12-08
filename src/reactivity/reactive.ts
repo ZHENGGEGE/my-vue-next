@@ -1,16 +1,13 @@
-import {
-  mutableHandlers,
-  readonlyHandlers,
-} from "./baseHandlers";
+import { mutableHandlers, readonlyHandlers } from "./baseHandlers";
 
 export function reactive(raw) {
-  return createActiveObject(raw,mutableHandlers)
+  return createActiveObject(raw, mutableHandlers);
 }
 
 export function readonly(raw) {
-  return createActiveObject(raw,readonlyHandlers)
+  return createActiveObject(raw, readonlyHandlers);
 }
 
-function createActiveObject(raw:any,baseHandlers){
+function createActiveObject(raw: any, baseHandlers) {
   return new Proxy(raw, baseHandlers);
 }
