@@ -14,6 +14,11 @@ export function readonly(raw) {
 }
 
 export function isReactive(value) {
+  console.log("value", value);
+  console.log(
+    "!!value[ReactiveFlags.IS_REACTIVE]",
+    !!value[ReactiveFlags.IS_REACTIVE]
+  );
   return !!value[ReactiveFlags.IS_REACTIVE];
 }
 

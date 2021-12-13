@@ -7,6 +7,8 @@ const readonlyGet = createGetter(true);
 
 function createGetter(isReadonly = false) {
   return function get(target, key) {
+    console.log("get target", target);
+    console.log("get key", key);
     if (key === ReactiveFlags.IS_REACTIVE) {
       return !isReadonly;
     } else if (key === ReactiveFlags.IS_READONLY) {
@@ -14,6 +16,7 @@ function createGetter(isReadonly = false) {
     }
 
     const res = Reflect.get(target, key);
+    console.log("res", res);
     if (!isReadonly) {
       // 依赖收集
       track(target, key);
