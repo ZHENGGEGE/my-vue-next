@@ -4,6 +4,8 @@ describe("reactive", () => {
   it("happy path", () => {
     const original = { foo: 1 };
     const observed = reactive(original);
+    console.log("original", original);
+    console.log("observed", observed);
     expect(observed).not.toBe(original);
     expect(observed.foo).toBe(1);
     expect(isReactive(observed)).toBe(true);
