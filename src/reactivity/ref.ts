@@ -5,6 +5,7 @@ import { reactive } from "./reactive";
 class RefImpl {
   public dep;
   private _value: any;
+  public __v_isRef = true;
 
   constructor(value) {
     this._value = convert(value);
@@ -36,4 +37,12 @@ function trackRefValue(ref) {
 
 export function ref(value) {
   return new RefImpl(value);
+}
+
+export function isRef(ref) {
+  return !!ref.__v_isRef;
+}
+
+export function unRef(ref) {
+  return isRef(ref) ? ref.value : ref;
 }
