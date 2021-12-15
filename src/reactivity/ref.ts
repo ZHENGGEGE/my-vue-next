@@ -5,7 +5,6 @@ import { reactive } from "./reactive";
 class RefImpl {
   public dep;
   private _value: any;
-  private _rawValue: any;
 
   constructor(value) {
     this._value = convert(value);
