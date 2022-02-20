@@ -1,3 +1,4 @@
+import { h } from "../../lib/my-vue-next.esm.js" 
 export const App = {
     render() {
       // ui

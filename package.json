@@ -1,7 +1,8 @@
 {
   "name": "my-vue-next",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/my-vue-next.cjs.js",
+  "module":"lib/my-vue-next.esm.js",
   "license": "MIT",
   "dependencies": {
     "yarn": "^1.22.17"
