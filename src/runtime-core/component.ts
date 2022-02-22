@@ -29,7 +29,7 @@ function handleSetupResult(instance, setupResult) {
   finishComponentSetup(instance);
 }
 
-function finishComponentSetup(instance) {
+function finishComponentSetup(instance: any) {
   const Component = instance.type;
   instance.render = Component.render;
 }
