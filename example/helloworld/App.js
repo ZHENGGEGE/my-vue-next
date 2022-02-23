@@ -9,15 +9,15 @@ export const App = {
           class: ["red", "hard"],
         },
         // string
-        // "hi, mini-vue"
+        "hi, "+ this.msg
         // Array
-        [h("p", { class:"red"}, "hi"), h("p", {class:"blue"}, "mini-vue")]
+        // [h("p", { class:"red"}, "hi"), h("p", {class:"blue"}, "123")]
       );
     },
   
     setup() {
       return {
-        msg: "mini-vue",
+        msg: "data123",
       };
     },
   };
