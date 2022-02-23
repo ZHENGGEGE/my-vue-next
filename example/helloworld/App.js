@@ -1,6 +1,9 @@
 import { h } from "../../lib/my-vue-next.esm.js" 
+window.self = null
 export const App = {
+
     render() {
+      window.self = this
       // ui
       return   h(
         "div",

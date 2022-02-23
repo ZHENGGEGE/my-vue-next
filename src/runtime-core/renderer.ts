@@ -28,7 +28,7 @@ function mountElement(vnode, container) {
   // el.textContent = "hi  su";
   // el.setAttribute("id", "root");
   // document.body.append(el);
-  const el = document.createElement(vnode.type);
+  const el = (vnode.el = document.createElement(vnode.type));
 
   const { children } = vnode;
   if (typeof children === "string") {
@@ -53,15 +53,18 @@ function mountChildren(vnode, container) {
   });
 }
 
-function mountComponent(vnode, container) {
-  const instance = createComponentIntance(vnode);
+function mountComponent(initialVnode, container) {
+  const instance = createComponentIntance(initialVnode);
 
   setupComponent(instance);
-  setupRenderEffect(instance, container);
+  setupRenderEffect(instance, initialVnode, container);
 }
 
-function setupRenderEffect(instance, container) {
+function setupRenderEffect(instance, initialVnode, container) {
   const { proxy } = instance;
   const subTree = instance.render.call(proxy);
+
   patch(subTree, container);
+  // element -> mount
+  initialVnode.el = subTree.el;
 }
