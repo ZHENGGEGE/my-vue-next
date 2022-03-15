@@ -74,8 +74,10 @@ function mountComponent(initialVnode, container) {
 
 function setupRenderEffect(instance, initialVnode, container) {
   const { proxy } = instance;
+  // TODO
   const subTree = instance.render.call(proxy);
-
+  console.log("proxy", proxy);
+  console.log("subTree", subTree);
   patch(subTree, container);
   // element -> mount
   initialVnode.el = subTree.el;
