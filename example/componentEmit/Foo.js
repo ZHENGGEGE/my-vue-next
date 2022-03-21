@@ -1,4 +1,4 @@
-import { h } from "../../lib/guide-mini-vue.esm.js";
+import { h } from "../../lib/my-vue-next.esm.js";
 
 export const Foo = {
   setup(props, { emit }) {
