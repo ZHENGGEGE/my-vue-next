@@ -1,5 +1,6 @@
 import { h, renderSlots } from "../../lib/my-vue-next.esm.js";
 
+
 export const Foo = {
   setup() {
     return {};
@@ -9,6 +10,7 @@ export const Foo = {
 
     // Foo .vnode. children
     console.log(this.$slots);
+    return h("div",{},[foo,renderSlots(this.$slots)])
     // children -> vnode
     //
     // renderSlots
@@ -16,13 +18,13 @@ export const Foo = {
     // 1. 获取到要渲染的元素 1
     // 2. 要获取到渲染的位置
     // 作用域插槽
-    const age = 18;
-    return h("div", {}, [
-      renderSlots(this.$slots, "header", {
-        age,
-      }),
-      foo,
-      renderSlots(this.$slots, "footer"),
-    ]);
+    // const age = 18;
+    // return h("div", {}, [
+    //   renderSlots(this.$slots, "header", {
+    //     age,
+    //   }),
+    //   foo,
+    //   renderSlots(this.$slots, "footer"),
+    // ]);
   },
 };
